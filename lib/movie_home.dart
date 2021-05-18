@@ -3,6 +3,7 @@ import 'keys.dart';
 import 'movie_model.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'movie_cell.dart';
 
 class MovieHome extends StatefulWidget {
   final String title;
@@ -54,7 +55,7 @@ class _MovieHomeState extends State<MovieHome> {
           : ListView.builder(
               itemCount: movies.movies.length,
               itemBuilder: (BuildContext context, int index) {
-                return Text(movies.movies[index].title);
+                return MovieCell(movies.movies[index]);
               },
             ),
     );
